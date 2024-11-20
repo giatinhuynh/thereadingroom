@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.thereadingroom.controller.admin.AdminManageUsersController" style="-fx-background-color: #f4e1c1;">
+
+	<!-- Sidebar on the left -->
+	<fx:include source="admin_sidebar.fxml"/>
+
+	<!-- Main content area for viewing and managing users -->
+	<VBox spacing="30" style="-fx-padding: 40; -fx-background-color: #f4e1c1; -fx-alignment: CENTER;" HBox.hgrow="ALWAYS">
+
+		<!-- Title and admin label -->
+		<Label fx:id="userLabel" style="-fx-font-size: 18px;" />
+		<Label text="Manage Users" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #8b4513;" />
+
+		<!-- Search section -->
+		<HBox spacing="15" alignment="CENTER">
+			<TextField fx:id="searchField" promptText="Search by User ID or Username"
+					   style="
+                        -fx-font-size: 16px;
+                        -fx-pref-width: 350;
+                        -fx-padding: 10 20;
+                        -fx-background-radius: 20;
+                        -fx-border-radius: 20;
+                        -fx-border-color: #d2691e;
+                        -fx-border-width: 2px;
+                        -fx-background-color: #ffffff;
+                    "/>
+			<Button text="Search" onAction="#handleSearchUser"
+					style="
+                    -fx-background-color: #d2691e;
+                    -fx-text-fill: white;
+                    -fx-font-size: 16px;
+                    -fx-padding: 10 25;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: transparent;
+                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
+                "/>
+		</HBox>
+
+		<!-- Table to display users -->
+		<TableView fx:id="userTableView" prefHeight="600" prefWidth="600"
+				   style="-fx-border-color: #8b4513; -fx-border-width: 2px; -fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);">
+			<columns>
+				<!-- User ID Column -->
+				<TableColumn fx:id="userIdColumn" prefWidth="100" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="User ID" />
+
+				<!-- Username Column -->
+				<TableColumn fx:id="usernameColumn" prefWidth="200" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Username" />
+
+				<!-- First Name Column -->
+				<TableColumn fx:id="firstNameColumn" prefWidth="150" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="First Name" />
+
+				<!-- Last Name Column -->
+				<TableColumn fx:id="lastNameColumn" prefWidth="150" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Last Name" />
+
+				<!-- Action Column -->
+				<TableColumn fx:id="actionColumn" prefWidth="240" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Actions" />
+			</columns>
+		</TableView>
+	</VBox>
+</HBox>

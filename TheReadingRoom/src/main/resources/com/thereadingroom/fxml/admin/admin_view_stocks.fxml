@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox style="-fx-background-color: #f4e1c1;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.thereadingroom.controller.admin.AdminStockController">
+
+	<!-- Sidebar on the left -->
+	<fx:include source="admin_sidebar.fxml" />
+
+	<!-- Main content area for viewing and updating stock levels -->
+	<VBox spacing="30" style="-fx-padding: 40; -fx-background-color: #f4e1c1; -fx-alignment: CENTER;" HBox.hgrow="ALWAYS">
+
+		<!-- Title -->
+		<Label style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #8b4513;" text="Manage Book Stocks" />
+
+		<!-- Search Bar -->
+		<HBox alignment="CENTER" spacing="15">
+			<TextField fx:id="searchField" promptText="Search books by title..."
+					   style="
+                    -fx-font-size: 16px;
+                    -fx-pref-width: 350;
+                    -fx-padding: 10 20;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: #d2691e;
+                    -fx-border-width: 2px;
+                    -fx-background-color: #ffffff;
+                "/>
+			<Button text="Search" onAction="#handleSearchBooks"
+					style="
+                    -fx-background-color: #d2691e;
+                    -fx-text-fill: white;
+                    -fx-font-size: 16px;
+                    -fx-padding: 10 25;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: transparent;
+                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
+                "/>
+		</HBox>
+
+		<!-- Table to display books -->
+		<TableView fx:id="bookTableView" prefHeight="600" prefWidth="600"
+				   style="-fx-border-color: #8b4513; -fx-border-width: 2px; -fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);">
+			<columns>
+				<!-- Book ID Column -->
+				<TableColumn fx:id="bookIdColumn" prefWidth="100" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Book ID" />
+
+				<!-- Title Column -->
+				<TableColumn fx:id="bookTitleColumn" prefWidth="200" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Title" />
+
+				<!-- Author Column -->
+				<TableColumn fx:id="bookAuthorColumn" prefWidth="150" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Author" />
+
+				<!-- Stock Column -->
+				<TableColumn fx:id="bookStockColumn" prefWidth="150" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Physical Copies" />
+
+				<!-- Sold Copies Column -->
+				<TableColumn fx:id="bookSoldCopiesColumn" prefWidth="150" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Sold Copies" />
+
+				<!-- Price Column -->
+				<TableColumn fx:id="bookPriceColumn" prefWidth="100" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Price" />
+
+				<!-- Action Column -->
+				<TableColumn fx:id="actionColumn" prefWidth="200" resizable="false" style="-fx-alignment: CENTER;" text="Actions" />
+			</columns>
+		</TableView>
+
+		<!-- Input Fields for Updating Stock and Adding a New Book -->
+		<HBox alignment="CENTER" spacing="15">
+
+			<!-- Left section for updating stock -->
+			<HBox alignment="CENTER_LEFT" spacing="10">
+				<Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Book ID:" />
+				<TextField fx:id="bookIdField" prefWidth="100" style="
+                    -fx-font-size: 16px;
+                    -fx-pref-width: 100;
+                    -fx-padding: 10 20;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: #d2691e;
+                    -fx-border-width: 2px;
+                    -fx-background-color: #ffffff;"/>
+				<Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="New Stock:" />
+				<TextField fx:id="newStockField" prefWidth="100" style="
+                    -fx-font-size: 16px;
+                    -fx-pref-width: 100;
+                    -fx-padding: 10 20;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: #d2691e;
+                    -fx-border-width: 2px;
+                    -fx-background-color: #ffffff;"/>
+				<!-- Update Stock Button -->
+				<Button onAction="#handleUpdateStock" style="
+                    -fx-background-color: #d2691e;
+                    -fx-text-fill: white;
+                    -fx-font-size: 16px;
+                    -fx-padding: 10 25;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: transparent;
+                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
+                " text="Update Stock" />
+			</HBox>
+
+			<!-- Spacer to push the 'Add Book' button to the right -->
+			<Region HBox.hgrow="ALWAYS" />
+
+			<!-- Right section for adding new books -->
+			<Button onAction="#handleAddBook"
+					style="
+                    -fx-background-color: #228b22;
+                    -fx-text-fill: white;
+                    -fx-font-size: 16px;
+                    -fx-padding: 10 25;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: transparent;
+                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
+                " text="Add Book" />
+
+		</HBox>
+	</VBox>
+</HBox>

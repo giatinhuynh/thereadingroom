@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.thereadingroom.controller.user.UserDashboardController" style="-fx-background-color: #f4e1c1;">
+
+    <!-- Sidebar Section: Included from sidebar.fxml -->
+    <fx:include source="sidebar.fxml"/>
+
+    <!-- Main Content Section (View Top 5 Books) -->
+    <VBox spacing="30" style="-fx-padding: 40; -fx-background-color: #f4e1c1; -fx-alignment: CENTER;" HBox.hgrow="ALWAYS">
+
+        <!-- Welcome Label -->
+        <Label fx:id="welcomeLabel" text="Welcome to The Reading Room!" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #8b4513;" />
+
+        <!-- Spacer to add some space -->
+        <Region prefHeight="35" />
+
+        <!-- Title for Top 5 Books -->
+        <Label text="Top 5 Best-Selling Books" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #8b4513;" />
+
+        <!-- TableView for Top 5 Books -->
+        <TableView fx:id="booksTableView" prefHeight="280" prefWidth="600" style="-fx-border-color: #8b4513; -fx-border-width: 2px; -fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);">
+            <columns>
+                <!-- Book Title Column -->
+                <TableColumn fx:id="titleColumn" text="Book Title" prefWidth="200" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" />
+
+                <!-- Price Column -->
+                <TableColumn fx:id="priceColumn" text="Price" prefWidth="60" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" />
+
+                <!-- Available Stock Column -->
+                <TableColumn fx:id="stockColumn" text="Available Copies" prefWidth="150" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" />
+
+                <!-- Sold Copies Column -->
+                <TableColumn fx:id="soldCopiesColumn" text="Sold Copies" prefWidth="120" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" />
+
+                <!-- Author Column -->
+                <TableColumn fx:id="authorColumn" text="Author" prefWidth="135" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" />
+
+                <!-- Action Column for 'Add to Cart' Button -->
+                <TableColumn fx:id="actionColumn" text="Action" prefWidth="175" resizable="false" style="-fx-alignment: CENTER;" />
+            </columns>
+        </TableView>
+
+        <!-- Spacer to add some space -->
+        <Region prefHeight="200" />
+
+    </VBox>
+</HBox>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.thereadingroom.controller.user.OrderController" style="-fx-background-color: #f4e1c1;">
+
+	<!-- Sidebar Section: Included from sidebar.fxml -->
+	<fx:include source="sidebar.fxml"/>
+
+	<!-- Main Content Section: Orders -->
+	<VBox spacing="40" style="-fx-padding: 60; -fx-background-color: #f4e1c1; -fx-alignment: CENTER;" HBox.hgrow="ALWAYS">
+
+		<!-- Title -->
+		<Label text="Your Orders" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #8b4513;" />
+
+		<!-- Spacer for some space -->
+		<Region prefHeight="30" />
+
+		<!-- ListView for the list of orders with checkboxes -->
+		<ListView fx:id="orderListView" prefHeight="350" prefWidth="600" styleClass="styled-list-view">
+			<items>
+				<FXCollections fx:factory="observableArrayList"/>
+			</items>
+		</ListView>
+
+		<!-- Spacer for space between ListView and export button -->
+		<Region prefHeight="20" />
+
+		<!-- HBox for the export button aligned to the right -->
+		<HBox alignment="CENTER_RIGHT" spacing="20" style="-fx-padding: 0 20 0 0;">
+			<Button fx:id="exportOrdersButton" text="Export Selected Orders" onAction="#handleExportOrders"
+					style="
+                    -fx-background-color: #d2691e;
+                    -fx-text-fill: white;
+                    -fx-font-size: 16px;
+                    -fx-padding: 10 25;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: transparent;
+                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
+                " />
+		</HBox>
+	</VBox>
+</HBox>

@@ -1,0 +1,67 @@
+/* Styling for the TableView */
+.table-view {
+    -fx-background-color: white;  /* Sets the background color of the TableView */
+    -fx-border-color: #8b4513;  /* Defines the border color around the TableView */
+    -fx-border-width: 2px;  /* Sets the border width around the TableView */
+    -fx-table-cell-border-color: transparent;  /* Removes the borders between table cells */
+}
+
+/* Styling for TableColumn headers */
+.table-view .column-header {
+    -fx-background-color: #f4e1c1;  /* Sets the background color for the TableColumn headers */
+    -fx-font-size: 16px;  /* Defines the font size of the column headers */
+    -fx-font-weight: bold;  /* Makes the text in the headers bold */
+    -fx-text-fill: #8b4513;  /* Sets the text color of the headers */
+    -fx-border-color: #8b4513;  /* Adds a border color around the headers */
+}
+
+/* Styling for the buttons inside the table */
+.button {
+    -fx-background-color: #d2691e;  /* Defines the background color for buttons */
+    -fx-text-fill: white;  /* Sets the button text color to white */
+    -fx-border-radius: 30;  /* Sets the button's border radius for rounded corners */
+    -fx-background-radius: 15;  /* Applies background radius for rounded buttons */
+    -fx-padding: 8 15;  /* Adds padding inside the button */
+    -fx-font-size: 14px;  /* Sets the font size for button text */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0.3, 0, 0);  /* Adds a subtle shadow effect */
+    -fx-transition: background-color 0.3s, -fx-scale-x 0.2s, -fx-scale-y 0.2s;  /* Smooth transition effect for button color and size changes */
+}
+
+/* Center alignment for all columns */
+.table-cell {
+    -fx-alignment: CENTER;  /* Centers the content of each table cell */
+}
+
+/* Styling for the ListView */
+.styled-list-view {
+    -fx-background-color: #ffffff;  /* Sets background color for ListView */
+    -fx-border-color: #8b4513;  /* Adds a border around the ListView */
+    -fx-border-width: 2px;  /* Sets the width of the ListView border */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);  /* Adds a shadow around the ListView */
+    -fx-padding: 10;  /* Adds padding inside the ListView */
+    -fx-background-radius: 10;  /* Rounds the ListView corners */
+    -fx-cell-hover-color: #f4e1c1;  /* Changes cell color on hover */
+    -fx-cell-focus-color: #d2691e;  /* Changes the focus color of selected cells */
+}
+
+/* Styling for the individual ListView items */
+.styled-list-view .list-cell {
+    -fx-background-color: #ffffff;  /* Sets the background color of each ListView item */
+    -fx-border-color: #dcdcdc;  /* Adds a border between ListView items */
+    -fx-border-width: 0 0 1px 0;  /* Applies a bottom border to each ListView item */
+    -fx-font-size: 14px;  /* Sets the font size for ListView item text */
+    -fx-padding: 10;  /* Adds padding inside each ListView item */
+    -fx-text-fill: #4a4a4a;  /* Sets the text color of the ListView items */
+    -fx-font-weight: bold;  /* Makes the text inside ListView items bold */
+}
+
+/* Hover effect for ListView items */
+.styled-list-view .list-cell:hover {
+    -fx-background-color: #f4e1c1;  /* Changes background color when the user hovers over an item */
+}
+
+/* Styling for selected ListView items */
+.styled-list-view .list-cell:selected {
+    -fx-background-color: #d2691e;  /* Changes the background color for selected items */
+    -fx-text-fill: white;  /* Changes text color for selected items */
+}

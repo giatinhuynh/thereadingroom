@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.thereadingroom.controller.user.ShoppingCartController" style="-fx-background-color: #f4e1c1;">
+
+    <!-- Sidebar Section: Included from sidebar.fxml with fixed width -->
+    <fx:include source="sidebar.fxml"/>
+
+    <!-- Main Content Section: Shopping Cart -->
+    <VBox spacing="30" style="-fx-padding: 40; -fx-background-color: #f4e1c1; -fx-alignment: CENTER;" HBox.hgrow="ALWAYS">
+
+        <!-- Shopping Cart Title -->
+        <Label text="Shopping Cart" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #8b4513;" />
+
+        <!-- Spacer for some space -->
+        <Region prefHeight="20" />
+
+        <!-- TableView for the shopping cart -->
+        <TableView fx:id="cartTableView" prefHeight="350" prefWidth="600" style="-fx-border-color: #8b4513; -fx-border-width: 2px; -fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);">
+            <columns>
+                <!-- Checkbox Column -->
+                <TableColumn fx:id="selectColumn" text="Select" prefWidth="100" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" />
+
+                <!-- Item Name Column -->
+                <TableColumn fx:id="itemNameColumn" text="Item Name" prefWidth="200" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" />
+
+                <!-- Quantity Column -->
+                <TableColumn fx:id="quantityColumn" text="Quantity" prefWidth="225" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" />
+
+                <!-- Total Amount Column -->
+                <TableColumn fx:id="totalAmountColumn" text="Total" prefWidth="100" resizable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" />
+
+                <!-- Remove Button Column -->
+                <TableColumn fx:id="removeColumn" text="Remove" prefWidth="225" resizable="false" style="-fx-alignment: CENTER;" />
+            </columns>
+        </TableView>
+
+        <!-- Spacer for space between TableView and total price -->
+        <Region prefHeight="10" />
+
+        <!-- HBox for total price and checkout button aligned to the right -->
+        <HBox alignment="CENTER_RIGHT" spacing="20" style="-fx-padding: 0 20 0 0;">
+            <Label fx:id="totalPriceLabel" text="Total Price: $" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            <Button text="Checkout" onAction="#handleCheckout" style="-fx-background-color: #d2691e; -fx-text-fill: white; -fx-border-radius: 15; -fx-padding: 10 20;" />
+        </HBox>
+    </VBox>
+</HBox>

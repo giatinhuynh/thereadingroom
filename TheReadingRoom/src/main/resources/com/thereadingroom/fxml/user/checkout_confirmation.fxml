@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.thereadingroom.controller.user.CheckoutConfirmationController"
+      spacing="30" alignment="CENTER" style="-fx-padding: 40; -fx-background-color: #f4e1c1;">
+
+    <!-- Title -->
+    <Label text="Confirm Your Checkout" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #8b4513;" />
+
+    <!-- Table to display items in the cart -->
+    <TableView fx:id="checkoutTableView" prefHeight="300" prefWidth="400">
+        <columns>
+            <TableColumn text="Item Name" prefWidth="200" />
+            <TableColumn text="Quantity" prefWidth="100" />
+            <TableColumn text="Price" prefWidth="100" />
+        </columns>
+    </TableView>
+
+    <!-- Total price -->
+    <Label fx:id="totalPriceLabel" text="Total Price: $" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+    <!-- Action buttons for Confirm and Cancel -->
+    <HBox spacing="15" style="-fx-alignment: CENTER;">
+        <Button text="Confirm" onAction="#handleConfirmCheckout" style="
+            -fx-background-color: #228b22;
+            -fx-text-fill: white;
+            -fx-font-size: 16px;
+            -fx-padding: 10 25;
+            -fx-background-radius: 20;
+            -fx-border-radius: 20;
+            -fx-border-color: transparent;
+            -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
+        "/>
+        <Button text="Cancel" onAction="#handleCancelCheckout" style="
+            -fx-background-color: #d2691e;
+            -fx-text-fill: white;
+            -fx-font-size: 16px;
+            -fx-padding: 10 25;
+            -fx-background-radius: 20;
+            -fx-border-radius: 20;
+            -fx-border-color: transparent;
+            -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
+        "/>
+    </HBox>
+</VBox>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.thereadingroom.controller.common.EditProfileController" style="-fx-background-color: #f4e1c1;">
+
+    <!-- Sidebar Section: Included from sidebar.fxml -->
+    <fx:include source="sidebar.fxml"/>
+
+    <!-- Main Content Section: Edit Profile -->
+    <VBox spacing="30" alignment="CENTER" style="-fx-padding: 60; -fx-background-color: #f4e1c1;" HBox.hgrow="ALWAYS">
+
+        <!-- Title -->
+        <Label text="Edit Profile" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #8b4513;" />
+
+        <!-- Form centered in a VBox -->
+        <VBox spacing="20" alignment="CENTER" style="-fx-alignment: CENTER;">
+
+            <!-- Username field (not editable) -->
+            <VBox spacing="5" style="-fx-alignment: CENTER;">
+                <Label text="Username:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #8b4513; -fx-alignment: CENTER-LEFT;" />
+                <TextField fx:id="usernameField" editable="false" style="
+                    -fx-pref-width: 300px;
+                    -fx-max-width: 300px;
+                    -fx-padding: 10 15;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: #d2691e;
+                    -fx-border-width: 2px;
+                    -fx-background-color: #ffffff;" />
+            </VBox>
+
+            <!-- First Name field -->
+            <VBox spacing="5" style="-fx-alignment: CENTER;">
+                <Label text="First Name:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #8b4513; -fx-alignment: CENTER-LEFT;" />
+                <TextField fx:id="firstNameField" style="
+                    -fx-pref-width: 300px;
+                    -fx-max-width: 300px;
+                    -fx-padding: 10 15;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: #d2691e;
+                    -fx-border-width: 2px;
+                    -fx-background-color: #ffffff;" />
+            </VBox>
+
+            <!-- Last Name field -->
+            <VBox spacing="5" style="-fx-alignment: CENTER;">
+                <Label text="Last Name:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #8b4513; -fx-alignment: CENTER-LEFT;" />
+                <TextField fx:id="lastNameField" style="
+                    -fx-pref-width: 300px;
+                    -fx-max-width: 300px;
+                    -fx-padding: 10 15;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: #d2691e;
+                    -fx-border-width: 2px;
+                    -fx-background-color: #ffffff;" />
+            </VBox>
+
+            <!-- Password field -->
+            <VBox spacing="5" style="-fx-alignment: CENTER;">
+                <Label text="Password:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #8b4513; -fx-alignment: CENTER-LEFT;" />
+                <PasswordField fx:id="passwordField" style="
+                    -fx-pref-width: 300px;
+                    -fx-max-width: 300px;
+                    -fx-padding: 10 15;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: #d2691e;
+                    -fx-border-width: 2px;
+                    -fx-background-color: #ffffff;" />
+            </VBox>
+
+            <!-- Save changes button -->
+            <Button text="Save Changes" onAction="#handleSaveChanges" style="
+                    -fx-background-color: #d2691e;
+                    -fx-text-fill: white;
+                    -fx-font-size: 16px;
+                    -fx-padding: 10 25;
+                    -fx-background-radius: 20;
+                    -fx-border-radius: 20;
+                    -fx-border-color: transparent;
+                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);"/>
+
+            <!-- Feedback label for success or error messages -->
+            <Label fx:id="feedbackLabel" style="-fx-text-fill: red; -fx-font-size: 14px;" />
+        </VBox>
+    </VBox>
+</HBox>
